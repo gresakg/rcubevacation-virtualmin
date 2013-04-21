@@ -1,0 +1,38 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<roundcube:include file="/includes/links.html" />
+</head>
+<body class="noscroll">
+
+<roundcube:include file="/includes/header.html" />
+
+<div id="mainscreen" class="offset">
+
+<roundcube:include file="/includes/settingstabs.html" />
+
+<div id="settings-right">
+
+<div id="sectionslist" class="uibox listbox">
+<div class="scroller">
+        <roundcube:object name="sectionslist" id="sections-table" class="listing" />
+</div>
+</div>
+
+<div id="pagecontent">
+    <form name="vacationform" action="./?_task=settings&_action=plugin.vacation-save" method="post">
+    <div id="prefs-details">
+        <roundcube:object name="plugin.vacation_form" />
+        <roundcube:button command="plugin.vacation-save" type="input"
+            class="button mainaction" label="save" title="save" /><br/>
+        <p>&nbsp;</p>
+        </div>
+    </form>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
