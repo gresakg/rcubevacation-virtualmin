@@ -12,23 +12,15 @@
 
 <roundcube:include file="/includes/settingstabs.html" />
 
-<div id="settings-right">
-
-<div id="sectionslist" class="uibox listbox">
-<div class="scroller">
-        <roundcube:object name="sectionslist" id="sections-table" class="listing" />
-</div>
-</div>
-
-<div id="pagecontent">
+<div id="pluginbody" class='uibox contentbox vacationform'><div id="prefs-title" class="boxtitle"><roundcube:label name="vacation.outofoffice" /></div>
     <form name="vacationform" action="./?_task=settings&_action=plugin.vacation-save" method="post">
-    <div id="prefs-details">
+    <div class='scroller'>
         <roundcube:object name="plugin.vacation_form" />
-        <roundcube:button command="plugin.vacation-save" type="input"
-            class="button mainaction" label="save" title="save" /><br/>
-        <p>&nbsp;</p>
+        <p><roundcube:button command="plugin.vacation-save" type="input"
+            class="button mainaction" label="save" title="save" /></p>
         </div>
     </form>
+<div id="message" class="statusbar"></div>
 </div>
 
 </div>

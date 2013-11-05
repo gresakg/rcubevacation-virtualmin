@@ -109,7 +109,6 @@ class vacation extends rcube_plugin {
 
         $rcmail->output->set_env('product_name', $rcmail->config->get('product_name'));
         // return the complete edit form as table
-        $out = '<fieldset><legend>' . $this->gettext('outofoffice') . ' ::: ' . $rcmail->user->data['username'] . '</legend>' . "\n";
         // show autoresponder properties
 
         // Auto-reply enabled
@@ -122,16 +121,16 @@ class vacation extends rcube_plugin {
 
         // Subject
         $field_id = 'vacation_subject';
-        $input_autorespondersubject = new html_inputfield(array('name' => '_vacation_subject', 'id' => $field_id, 'size' => 90));
-        $out .= sprintf("<p><label for=\"%s\">%s</label>&nbsp;%s</p>\n",
+        $input_autorespondersubject = new html_inputfield(array('name' => '_vacation_subject', 'id' => $field_id, 'size' => 70));
+        $out .= sprintf("<p><label for=\"%s\">%s</label><br/>&nbsp;%s</p>\n",
                 $field_id,
                 rep_specialchars_output($this->gettext('autoreplysubject')),
                 $input_autorespondersubject->show($settings['subject']));
 
         // Out of office body
         $field_id = 'vacation_body';
-        $input_autoresponderbody = new html_textarea(array('name' => '_vacation_body', 'id' => $field_id, 'cols' => 88, 'rows' => 20));
-        $out .= sprintf("<p><label for=\"%s\">%s</label>&nbsp;%s</p>\n",
+        $input_autoresponderbody = new html_textarea(array('name' => '_vacation_body', 'id' => $field_id, 'cols' => 70, 'rows' => 10));
+        $out .= sprintf("<p><label for=\"%s\">%s</label><br/>&nbsp;%s</p>\n",
                 $field_id,
                 rep_specialchars_output($this->gettext('autoreplymessage')),
                 $input_autoresponderbody->show($settings['body']));
@@ -158,7 +157,7 @@ class vacation extends rcube_plugin {
 			$out .= "</p>";
 
         }
-        $out .= '</fieldset><fieldset><legend>' . $this->gettext('forward') . '</legend>';
+        $out .= '<div class="boxtitle">' . $this->gettext('forward') . '</div>';
 
         	// Keep a local copy of the mail
 			$field_id = 'vacation_keepcopy';
@@ -177,15 +176,15 @@ class vacation extends rcube_plugin {
 
 			// Forward mail to another account
 			$field_id = 'vacation_forward';
-			$input_autoresponderforward = new html_inputfield(array('name' => '_vacation_forward', 'id' => $field_id, 'size' => 90));
-			$out .= sprintf("<p><label for=\"%s\">%s</label>&nbsp;%s</p>\n",
+			$input_autoresponderforward = new html_inputfield(array('name' => '_vacation_forward', 'id' => $field_id, 'size' => 70));
+			$out .= sprintf("<p><label for=\"%s\">%s</label><br/>&nbsp;%s</p>\n",
 					$field_id,
 					rep_specialchars_output($this->gettext('forwardingaddresses')),
 					$input_autoresponderforward->show($settings['forward']));
 
 			
 		}
-                $out .= "</fieldset>\n";
+                $out .= "\n";
         $rcmail->output->add_gui_object('vacationform', 'vacation-form');
         return $out;
     }

@@ -1,4 +1,6 @@
-
+.vacationform p {
+	padding:0 1em;
+}
 #vacationpage
 {
   width: 800px;
