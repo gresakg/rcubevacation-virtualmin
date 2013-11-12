@@ -1,4 +1,15 @@
 <?php
+/*
+ * Slovenian language file for the vacation plugin that adds a new tab to the settings section
+ * to enable forward / out of office replies.
+ *
+ * @package        plugins
+ * @uses        rcube_plugin
+ * @author       Gregor Gresak razvoj@gresak.net 
+ * @version        1.0
+ * @license     GPL
+ * @link        https://github.com/gresakg/rcubevacation-virtualmin
+*/
 $labels = array();
 $labels['vacation'] = 'Odsotnost';
 $labels['autoreply'] = "Vključi odzivnik";

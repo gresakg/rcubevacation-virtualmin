@@ -6,10 +6,10 @@
  * @package	plugins
  * @uses	rcube_plugin
  * @author	Jasper Slits <jaspersl@gmail.com>
- * @version	1.9
+ * @author	Gregor Gresak <razvoj@gresak.net>
+ * @version	1.9.1
  * @license     GPL
- * @link	https://sourceforge.net/projects/rcubevacation/
- * @todo	See README.TXT
+ * @link	https://github.com/gresakg/rcubevacation-virtualmin
 */
 
 // Load required dependencies
